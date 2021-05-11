@@ -1,0 +1,75 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Forgotten physics}
+\author{You}
+
+\begin{document}
+\maketitle
+
+\section{Classical mechanics}
+\subsection{Quick recap}
+\subsubsection{Lagrange}
+With the Lagrange function $L=L(q,\dot q,t)=T-V$ 
+\begin{align}
+    S=\int dt L\quad\rightarrow\quad
+    0=\delta S 
+    &= \int dt\left[\frac{\partial L}{\partial q}\delta q+\frac{\partial L}{\partial \dot q}\delta\dot q\right]\\
+    &= \int dt\left[\frac{\partial L}{\partial q}-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q}\right)\right]\delta q
+\end{align}
+The Euler-Lagrange equation look (obviously) a like Newtons third Law
+\begin{align}
+    \underbrace{\frac{\partial L}{\partial q}}_{\sim F=-\nabla V}-\frac{d}{dt}\underbrace{\left(\frac{\partial L}{\partial \dot q}\right)}_{\sim p} = 0.
+\end{align}
+
+
+\subsubsection{Hamilton}
+We call
+\begin{align}
+    p=p(q,\dot q,t)=\frac{\partial L}{\partial \dot q}
+\end{align}
+the conjugated momentum. Now we can replace the generalized velocity with the conjugated momentum
+\begin{align}
+    H=H(q,p,t)
+    &=\dot q\frac{\partial L}{\partial\dot q}-L\\
+    &=p\dot q-L
+\end{align}
+Then
+\begin{align}
+    \delta L
+    &=\frac{\partial L}{\partial q}\delta q+\frac{\partial L}{\partial \dot q}\delta\dot q\\
+    &=\frac{\partial L}{\partial q}\delta q+p\delta\dot q\\
+    &=\frac{\partial L}{\partial q}\delta q+\delta(p\dot q)-\dot q\,\delta p\\
+    \delta H=\delta(p\dot q-L)&=\dot q\delta p-\frac{\partial L}{\partial q}\delta q=\dot q\delta p-\dot p\delta q\\
+    \delta H&=\frac{\partial H}{\partial q}\delta q+\frac{\partial H}{\partial p}\delta p
+\end{align}
+which gives the Hamilton equations
+\begin{align}
+    \dot p_i=-\frac{\partial H}{\partial q_i},\quad\quad
+    \dot q_i=\frac{\partial H}{\partial p_i}
+\end{align}
+For cyclical coordinates we have
+\begin{align}
+    \frac{\partial L}{\partial q_i}=0\quad\rightarrow\quad\frac{dp_i}{dt}=\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}=0\quad\rightarrow\quad p_i=\alpha_i\\
+    \dot q_i=\left.\frac{\partial H}{\partial p_i}\right|_{p_i=\alpha_i}=v_i(t)\quad\rightarrow\quad q_i=\int dt v_i+\beta_i
+\end{align}
+
+
+
+\subsection{Canonical transformations}
+
+
+
+\end{document}
